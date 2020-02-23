@@ -1,0 +1,25 @@
+{
+    "name": "rsseq-vscode",
+    "displayName": "RSSEQ-vscode",
+    "description": "RSSEQ syntax highlighting for Visual Studio Code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "rsseq",
+            "aliases": ["RSSEQ", "rsseq"],
+            "extensions": [".rss"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "rsseq",
+            "scopeName": "source.rss",
+            "path": "./syntaxes/rsseq.tmLanguage.json"
+        }]
+    }
+}

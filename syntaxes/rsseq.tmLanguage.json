@@ -1,0 +1,68 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "RSSEQ",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#preprocessor"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#subroutines"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.rsseq",
+				"match": "\\b(variable|NOP|CRIT_LOCK|CRIT_UNLOCK|COPY|SUB|ENDSLICE|GETTIME|ADDOBJ|KILLOBJ|FADEOBJ|SETOBJPARAM|EVENT|FLUSHANIM|TRIGANIM|WAITANIM|LOOPANIM|TRIGWAITANIM|TRIGANIMSPEED|TURBO|TRIGANIM_CH|LOOPANIM_CH|RAND|JSR|RETURN|BRANCH|BRANCH_Z|BRANCH_NZ|BRANCH_NV|BRANCH_PV|NAME|TEST|CMP|HUSH|HOP|WAIT|WAIT4ANIM|ADD|DIV|MOD|TOUR|BUMP|COAST|ADDHEAD|DELHEAD|LIMBO|UNLIMBO|FORCEUNLIMBO|INLIMBO|LIMBOSPACE|SPAWNCHILD|SPAWNSOUND|REMOVECHILD|GETVARINCHILD|SETVARINCHILD|SETVARINPARENT|GETVARINPARENT|BOUNCESETNODE|BOUNCESETBASE|BOUNCE|UNBOUNCE|FORCEUNBOUNCE|BOUNCING|WALKON|WALKOFF|WALKGET|WALKST_FLOAT|WALKFLOATSTAT|WALKFLOATSTOP|STARTSCREAM|STOPSCREAM|SINGLESCREAM|SCREAMLEVEL|FINDSCRIPTRAND|SETREMOTEVAR|REPAIREFFECT|SETTIMER|GETTIMER|HOUR|MIN|SEC|SETREVERB|DIPMUSIC|SPARK)\\b"
+			}]
+		},
+		"preprocessor": {
+			"name": "meta.preprocessor.rsseq",
+			"patterns": [
+				{
+					"name": "constant.character.escape.rsseq",
+					"match": "#\\b(\\w*\\w*)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.rsseq",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.rsseq",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.rsseq",
+			"patterns": [
+				{
+					"name": "constant.character.escape.rsseq",
+					"match": "\\;.*"
+				}
+			]
+		},
+		"subroutines": {
+			"name": "entity.name.function.rsseq",
+			"patterns": [
+				{
+					"name": "constant.character.escape.rsseq",
+					"match": "\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.rss"
+}
