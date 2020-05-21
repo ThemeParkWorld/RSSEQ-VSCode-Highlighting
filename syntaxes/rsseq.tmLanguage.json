@@ -16,6 +16,15 @@
 		},
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#scriptdefs"
 		}
 	],
 	"repository": {
@@ -29,7 +38,7 @@
 			"name": "meta.preprocessor.rsseq",
 			"patterns": [
 				{
-					"name": "constant.character.escape.rsseq",
+					"name": "meta.preprocessor",
 					"match": "#\\b(\\w*\\w*)\\b"
 				}
 			]
@@ -43,7 +52,7 @@
 			"name": "comment.rsseq",
 			"patterns": [
 				{
-					"name": "constant.character.escape.rsseq",
+					"name": "comment",
 					"match": "\\;.*"
 				}
 			]
@@ -52,8 +61,35 @@
 			"name": "entity.name.function.rsseq",
 			"patterns": [
 				{
-					"name": "constant.character.escape.rsseq",
-					"match": "\\."
+					"name": "entity.name.function",
+					"match": "\\.\\w*"
+				}
+			]
+		},
+		"constants": {
+			"name": "constant.rsseq",
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\s(-?)[0-9]+\\s"
+				}
+			]
+		},
+		"scriptdefs": {
+			"name": "constant.scriptdefs.rsseq",
+			"patterns": [
+				{
+					"name": "constant.other",
+					"match": "\\s(OBJ_|ANIM_|P_EFFECT_|BUMP_|BUS_|SPACE_|EVT_|E_EFFECT)\\w*\\s"
+				}
+			]
+		},
+		"variable": {
+			"name": "variable.name.rsseq",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"match": "\\sVAR_\\w*\\s"
 				}
 			]
 		}
