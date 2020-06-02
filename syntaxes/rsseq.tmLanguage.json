@@ -54,6 +54,10 @@
 				{
 					"name": "comment",
 					"match": "\\;.*"
+				},
+				{
+					"name": "comment",
+					"match": "\\//.*"
 				}
 			]
 		},
